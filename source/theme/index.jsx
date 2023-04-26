@@ -2,7 +2,8 @@ export const Theme = {
   colors: {
     white: {
       10: '#FFF',
-      20: '#E7E2F3'
+      20: '#E7E2F3',
+      30: '#FFFFFF4e'
     },
     black: {
       10: '#000',
@@ -11,7 +12,8 @@ export const Theme = {
     },
     purple: {
       10: '#4F3D56',
-      20: '#57435C'
+      20: '#57435C',
+      30: '#170D30'
     }
   }
 }

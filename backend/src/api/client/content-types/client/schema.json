@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "client",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "cpf": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "sald": {
+      "type": "decimal"
+    }
+  }
+}

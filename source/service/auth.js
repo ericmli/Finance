@@ -6,11 +6,19 @@ export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null)
 
-  const login = (token) => {
+  async function login(token) {
     setToken(token)
-    AsyncStorage.setItem('token', JSON.stringify(token))
-    AsyncStorage.setItem('name', token[0]?.name)
-    AsyncStorage.setItem('email', token[0]?.email)
+    AsyncStorage.setItem('token', token.jwt)
+    AsyncStorage.setItem('name', token.user.username)
+    AsyncStorage.setItem('email', token.user.email)
+    AsyncStorage.setItem('cpf', token.user.cpf)
+  }
+
+  async function notRememberLogin(token) {
+    setToken(token)
+    AsyncStorage.setItem('name', token.user.username)
+    AsyncStorage.setItem('email', token.user.email)
+    AsyncStorage.setItem('cpf', token.user.cpf)
   }
 
   const logout = () => {
@@ -19,7 +27,7 @@ const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ token, login, logout }}>
+    <AuthContext.Provider value={{ token, login, logout, notRememberLogin }}>
       {children}
     </AuthContext.Provider>
   )

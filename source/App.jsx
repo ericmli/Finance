@@ -1,8 +1,11 @@
 import React from 'react'
 import MyStack from './route'
+import AuthProvider from './service/auth'
 
 export default function App() {
   return (
-    <MyStack/>
+    <AuthProvider>
+      <MyStack/>
+    </AuthProvider>
   )
 }
